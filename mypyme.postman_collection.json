@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "476de56e-19d7-47dd-b129-263fe9c52ca2",
+		"name": "mypyme",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44400362"
+	},
+	"item": [
+		{
+			"name": "/status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/status",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/{id}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"{id}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/{id}",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/34",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"34"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\": 34,\r\n    \"firstName\": \"Geoff\",\r\n    \"lastName\": \"Averies\",\r\n    \"email\": \"gaveriesx@canalblog.com\",\r\n    \"birthDate\": \"1981-07-26\",\r\n    \"gender\": \"Male\",\r\n    \"salary\": \"$997.38\",\r\n    \"jobTitle\": \"Director of Sales\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "/employees",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"\",\r\n    \"lastName\": \"\",\r\n    \"email\": \"\",\r\n    \"birthDate\": \"\",\r\n    \"gender\": \"\",\r\n    \"salary\": \"\",\r\n    \"jobTitle\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/employees",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"TEST\",\r\n    \"lastName\": \"TEST\",\r\n    \"email\": \"gaveriesx@canalblog.com\",\r\n    \"birthDate\": \"1981-07-26\",\r\n    \"gender\": \"Male\",\r\n    \"salary\": \"$997.38\",\r\n    \"jobTitle\": \"Director of Sales\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}",
+							"host": [
+								"{{baseUrl}}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\": 101,\r\n    \"firstName\": \"TEST\",\r\n    \"lastName\": \"TEST\",\r\n    \"email\": \"gaveriesx@canalblog.com\",\r\n    \"birthDate\": \"1981-07-26\",\r\n    \"gender\": \"Male\",\r\n    \"salary\": \"$997.38\",\r\n    \"jobTitle\": \"Director of Sales\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "/employees",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": ,\r\n    \"firstName\": \"\",\r\n    \"lastName\": \"\",\r\n    \"email\": \"\",\r\n    \"birthDate\": \"\",\r\n    \"gender\": \"\",\r\n    \"salary\": \"\",\r\n    \"jobTitle\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/34",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"34"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New request",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 34,\r\n    \"firstName\": \"TEST\",\r\n    \"lastName\": \"TEST\",\r\n    \"email\": \"gaveriesx@canalblog.com\",\r\n    \"birthDate\": \"1981-07-26\",\r\n    \"gender\": \"Male\",\r\n    \"salary\": \"$997.38\",\r\n    \"jobTitle\": \"Director of Sales\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/34",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"34"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"id\": 34,\r\n    \"firstName\": \"TEST\",\r\n    \"lastName\": \"TEST\",\r\n    \"email\": \"gaveriesx@canalblog.com\",\r\n    \"birthDate\": \"1981-07-26\",\r\n    \"gender\": \"Male\",\r\n    \"salary\": \"$997.38\",\r\n    \"jobTitle\": \"Director of Sales\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "employees",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
