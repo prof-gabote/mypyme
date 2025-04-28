@@ -27,6 +27,6 @@ public class Employee {
     private String email;
     private LocalDate birthDate;
     private String gender;
-    private String salary;
+    private Double salary;
     private String jobTitle;
 }
