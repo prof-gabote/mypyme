@@ -28,7 +28,6 @@ EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
 
 # Comandos
-# .\mvnw clean package
 # docker build -t spring-app .
 # docker run -p 8080:8080 spring-app
 # git clone --branch nombre-de-la-rama --single-branch url-del-repo
