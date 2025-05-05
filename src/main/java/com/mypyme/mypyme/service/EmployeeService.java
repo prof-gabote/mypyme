@@ -15,7 +15,7 @@ public class EmployeeService {
 
     private final EmployeeRepository employeeRepository;
 
-    public Employee getEmployeeById(Integer id) {
+    public Employee getEmployeeById(Long id) {
         return employeeRepository.findById(id).orElse(null);
     }
 
@@ -27,7 +27,7 @@ public class EmployeeService {
         return employeeRepository.save(employee);
     }
 
-    public Employee updateEmployee(Integer id, Employee employee) {
+    public Employee updateEmployee(Long id, Employee employee) {
         if (employeeRepository.existsById(id)) {
             employee.setId(id);
             return employeeRepository.save(employee);
@@ -35,7 +35,7 @@ public class EmployeeService {
         return null;
     }
 
-    public void deleteEmployee(Integer id) {
+    public void deleteEmployee(Long id) {
         employeeRepository.deleteById(id);
     }
 }
