@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Data
-public class Deparment {
+public class Department {
 
     @Id
     private String id;
@@ -36,6 +36,6 @@ public class Deparment {
     @Column(nullable = false, length = 20)
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "deparment") //Solo para lectura
+    @OneToMany(mappedBy = "department") //Solo para lectura
     private List<Employee> employees;
 }

@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
@@ -39,27 +40,31 @@ public class Employee {
 
     @Column(nullable = false, length = 250)
     private String email;
-    
+
     @Temporal(TemporalType.DATE)
     private Date birthDate;
 
-    @Column(nullable = true, length = 6)
+    @Column(nullable = true, length = 12)
     private String gender;
 
     @Column(nullable = false)
-    private Double salary;
+    private int salary;
 
     @Column(nullable = false, length = 250)
     private String jobTitle;
-    
+
     @ManyToOne
     @JoinColumn(name = "department_id", nullable = false) // Foreign key column
-    private Deparment deparment;
+    private Department department;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "payroll_account_id", nullable = false) // Foreign key column
     private PayrollAccount payrollAccount;
 
     @ManyToMany
+    @JoinTable(
+        name = "employee_projects",
+        joinColumns = @JoinColumn(name = "employee_id"),
+        inverseJoinColumns = @JoinColumn(name = "project_id"))
     private List<Project> projects;
 }
