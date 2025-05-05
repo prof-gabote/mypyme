@@ -17,28 +17,10 @@ public class EmployeeToEmployeeDTOConverter implements Converter<Employee, Emplo
     @Nullable
     public EmployeeDTO convert(Employee employee) {
         EmployeeDTO dto = new EmployeeDTO();
-        dto.setId(employee.getId());
-        dto.setFirstName(employee.getFirstName());
-        dto.setLastName(employee.getLastName());
-        dto.setEmail(employee.getEmail());
-        dto.setBirthDate(employee.getBirthDate());
-        dto.setGender(employee.getGender());
-        dto.setSalary(employee.getSalary());
-        dto.setJobTitle(employee.getJobTitle());
-        dto.setDepartmentId(employee.getDepartment() != null ? employee.getDepartment().getId() : null);
-        dto.setPayrollAccountBankName(employee.getPayrollAccount() != null ? employee.getPayrollAccount().getBankName() : null);
-        dto.setPayrollAccountNumber(employee.getPayrollAccount() != null ? employee.getPayrollAccount().getAccountNumber() : null);
-        
-        // Proyectos
-        if (employee.getProjects() != null) {
-            List<String> projectNames = new ArrayList<>();
-            for (Project project : employee.getProjects()) {
-                projectNames.add(project.getName());
-            }
-            dto.setProjectNames(projectNames);
-        } else {
-            dto.setProjectNames(null);
-        }
+        /*
+        Un corvertidor nos ahorra el trabajo de parsear objetos en las solicitudes.
+        Por ejemplo, podemos usar un convertidor para convertir la entidad completa Employee en solo los datos que usará el sistema
+        */
         return dto;
     }
 

@@ -12,20 +12,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class Project {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 250)
     private String name;
 
-    @ManyToMany(mappedBy = "projects")
+    //¿Cómo manejamos un Muchos es a Muchos
     private List<Employee> employees;
 
 }

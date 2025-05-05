@@ -12,9 +12,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
-@Table(name = "department")
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -24,18 +21,14 @@ public class Department {
     @Id
     private String id;
 
-    @Column(nullable = false, length = 250)
     private String name;
 
-    @Column(nullable = false, length = 250)
     private String description;
 
-    @Column(nullable = false, length = 250)
     private String location;
 
-    @Column(nullable = false, length = 20)
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "department") //Solo para lectura
+    //¿Cómo hago una relación Uno es a Muchos?
     private List<Employee> employees;
 }

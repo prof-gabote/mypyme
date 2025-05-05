@@ -21,50 +21,35 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Data
 public class Employee {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 250)
     private String firstName;
 
-    @Column(nullable = false, length = 250)
     private String lastName;
 
-    @Column(nullable = false, length = 250)
     private String email;
 
-    @Temporal(TemporalType.DATE)
+    //¿Cómo manejamos un Date? Es diferente a un LocalDate
     private Date birthDate;
 
-    @Column(nullable = true, length = 12)
     private String gender;
 
-    @Column(nullable = false)
     private int salary;
 
-    @Column(nullable = false, length = 250)
     private String jobTitle;
 
-    @ManyToOne
-    @JoinColumn(name = "department_id", nullable = false) // Foreign key column
+    //¿Cómo manejamos un Muchos es a Uno?
     private Department department;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "payroll_account_id", nullable = false) // Foreign key column
+    //¿Cómo manejamos un Uno es a Uno?
     private PayrollAccount payrollAccount;
 
-    @ManyToMany
-    @JoinTable(
-        name = "employee_projects",
-        joinColumns = @JoinColumn(name = "employee_id"),
-        inverseJoinColumns = @JoinColumn(name = "project_id"))
+    //¿Cómo manejamos el muchos es a muchos?
     private List<Project> projects;
 }
