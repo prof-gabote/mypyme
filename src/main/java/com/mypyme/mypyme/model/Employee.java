@@ -1,13 +1,22 @@
 package com.mypyme.mypyme.model;
 
 import java.util.Date;
+
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Entity
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,7 +34,7 @@ public class Employee {
 
     private String email;
 
-    //¿Cómo manejamos un Date? Es diferente a un LocalDate
+    @Temporal(TemporalType.DATE)
     private Date birthDate;
 
     private String gender;
@@ -34,5 +43,7 @@ public class Employee {
 
     private String jobTitle;
 
+    @ManyToOne
+    @JoinColumn(name = "department_id")
     private Department department;
 }
